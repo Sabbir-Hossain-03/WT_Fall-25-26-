@@ -7,6 +7,9 @@
             color:white;
             background-color:blue;
         }
+        .textbox{
+            width:20%;
+        }
 
         </style>
 </head>
@@ -57,7 +60,7 @@
                 Full Name:
  </tr><br>
  <tr>
-    <input type="text" id="n1">
+    <input type="text" id="n1" class="textbox">
  </tr>
  </td><br><br>
  <td>
@@ -65,7 +68,7 @@
                 Email:
  </tr><br>
  <tr>
-    <input type="email" id="n2">
+    <input type="email" id="n2" class="textbox">
  </tr>
  </td><br><br>
  <td>
@@ -73,7 +76,7 @@
                 Phone Number:
  </tr><br>
  <tr>
-    <input type="text" id="n3">
+    <input type="text" id="n3" class="textbox">
  </tr>
  </td><br><br>
  <td>
@@ -81,7 +84,7 @@
                 Password:
  </tr><br>
  <tr>
-    <input type="password" id="n4">
+    <input type="password" id="n4" class="textbox">
  </tr>
  </td><br><br>
 
@@ -89,7 +92,7 @@
                 Confirm Password:
  </tr><br>
  <tr>
-    <input type="password" id="n5">
+    <input type="password" id="n5" class="textbox">
  </tr>
  </td><br><br>
 
@@ -108,7 +111,7 @@
                 Activity Name:
  </tr><br>
  <tr>
-    <input type="text" id="n6">
+    <input type="text" id="n6" class="textbox">
  </tr>
  </td><br>
  <td>
