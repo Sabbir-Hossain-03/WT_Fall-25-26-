@@ -1,132 +1,124 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Form Handler</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 30px;
-      background-color: #f0f8ff;
-    }
- 
-    h2 {
-      text-align: center;
-      color: #003366;
-    }
- 
-    form {
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
-      margin: 0 auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
- 
-    input, select, button {
-      width: 100%;
-      padding: 8px;
-      margin-top: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
- 
-    button {
-      background-color: #003366;
-      color: white;
-      cursor: pointer;
-    }
- 
-    button:hover {
-      background-color: #0055aa;
-    }
- 
-    #output {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 16px;
-      color: #003366;
-    }
- 
-    #error {
-      margin-top: 10px;
-      color: red;
-      text-align: center;
-    }
-  </style>
+    <title>Validation</title>
+    <style>
+        #button{
+            color:white;
+            background-color:blue;
+        }
+
+        </style>
 </head>
 <body>
+<script>
+    function data()
+    {
+    var a=document.getElementById("n1").value
+    var b=document.getElementById("n2").value
+    var c=document.getElementById("n3").value
+    var d=document.getElementById("n4").value
+    var e=document.getElementById("n5").value
+    var showDiv=document.getElementById("output");
  
-  <h2>Registration Form</h2>
- 
-  <form onsubmit="return handleSubmit()">
-    <label>Name:</label>
-    <input type="text" id="name" />
- 
-    <label>ID:</label>
-    <input type="text" id="studentId" />
- 
-    <label>Age:</label>
-    <input type="number" id="age" />
- 
-    <label>Department:</label>
-    <select id="department">
-      <option value="">-- Select Department --</option>
-      <option value="CSE">CSE</option>
-      <option value="EEE">EEE</option>
-      <option value="BBA">BBA</option>
-    </select>
- 
-    <button type="submit">Submit</button>
-  </form>
- 
-  <!-- Output Section -->
-  <div id="error"></div>
-  <div id="output"></div>
- 
-  <script>
-    function handleSubmit() {
-      // Get values from form
-      var name = document.getElementById("name").value.trim();
-      var id = document.getElementById("studentId").value.trim();
-      var age = document.getElementById("age").value.trim();
-      var department = document.getElementById("department").value;
- 
-      var errorDiv = document.getElementById("error");
-      var outputDiv = document.getElementById("output");
- 
-      // Clear previous messages
-      errorDiv.innerHTML = "";
-      outputDiv.innerHTML = "";
- 
-      // Validation
-      if (name === "" || id === "" || age === "" || department === "") {
-        errorDiv.innerHTML = "Please fill in all fields.";
+    if(a==""||b==""||c==""||d==""||e=="")
+    {
+        alert("all fields are mendatory");
         return false;
-      }
- 
-      if (isNaN(id)) {
-        errorDiv.innerHTML = " Student ID must be numeric.";
-        return false;
-      }
- 
-      if (age > 150) {
-        errorDiv.innerHTML = " Age cannot be more than 150.";
-        return false;
-      }
- 
- 
-      outputDiv.innerHTML = `
-        <strong>Registration Complete!</strong><br><br>
-        Name: ${name}<br>
-        ID: ${id}<br>
-        Age: ${age}<br>
-        Department: ${department}
-      `;
- 
-      return false;
     }
-  </script>
+    else if(isNaN(c))
+    {
+        alert("only numbers are allowed in phone number");
+        return false;
+    }
+    else if(d!=e)
+    {
+        alert("enter same password");
+        return false;
+    }
+    else{
+        true;
+    }
+    showDiv.innerHTML = `
+        <strong>Registration Successful!</strong><br><br>
+        Name: ${a}<br>
+        Email: ${b}<br>
+        Phone Number: ${c}<br>
+      `;
+      return false;
+ 
+    }
+</script>
+<h1>Participant Registration</h1>
+    <form onsubmit="return data()">
+        <table>
+        <td>
+            <tr>
+                Full Name:
+ </tr><br>
+ <tr>
+    <input type="text" id="n1">
+ </tr>
+ </td><br><br>
+ <td>
+            <tr>
+                Email:
+ </tr><br>
+ <tr>
+    <input type="email" id="n2">
+ </tr>
+ </td><br><br>
+ <td>
+            <tr>
+                Phone Number:
+ </tr><br>
+ <tr>
+    <input type="text" id="n3">
+ </tr>
+ </td><br><br>
+ <td>
+            <tr>
+                Password:
+ </tr><br>
+ <tr>
+    <input type="password" id="n4">
+ </tr>
+ </td><br><br>
+
+ <tr>
+                Confirm Password:
+ </tr><br>
+ <tr>
+    <input type="password" id="n5">
+ </tr>
+ </td><br><br>
+
+<input type="submit", value="Register" id="button">
+</table>
+ </form>
+   <div id="output"></div>
+   
+   <br><br><br><br><br><br>
+<h1>Activity selection</h1>
+
+<form>
+<table>
+        <td>
+            <tr>
+                Activity Name:
+ </tr><br>
+ <tr>
+    <input type="text" id="n6">
+ </tr>
+ </td><br>
+ <td>
+</table>
+<input type="submit", value="Add Activity" id="button">
+</form>
+
+
+
+
  
 </body>
 </html>
